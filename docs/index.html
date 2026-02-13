@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>anguila ventures</title>
+  <meta name="description" content="anguila ventures — Backing founders who swim against the current." />
+  <style>
+    :root{
+      color-scheme: dark;
+      --bg1:#04171a;
+      --bg2:#031014;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.50);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --accent: rgba(34,211,238,.18);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; min-height:100vh;
+      background:
+        radial-gradient(1100px 700px at 18% 10%, var(--accent), transparent 55%),
+        radial-gradient(900px 650px at 82% 90%, rgba(16,185,129,.10), transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2));
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      letter-spacing:.2px;
+    }
+    .wrap{ min-height:100vh; display:grid; place-items:center; padding:56px 22px; }
+    .card{
+      width:min(980px, 100%);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      padding:34px 32px;
+    }
+
+    /* White horizontal logo box */
+    .logoBox{
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgb(255 255 255);
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Ensure the logo is centered within the white box */
+    .lockup{
+      display: block;
+      width: min(520px, 100%);
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .tagline{
+      margin: 18px 0 0;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    .tagline strong{ font-weight: 750; color: var(--text); }
+
+    .meta{
+      margin-top: 22px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size: 13px;
+      color: var(--faint);
+    }
+    .pill{
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:6px 10px;
+      background:rgba(255,255,255,.04);
+    }
+    .divider{
+      margin: 26px 0 0;
+      height:1px;
+      background: rgba(255,255,255,.12);
+    }
+    footer{
+      margin-top: 18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size: 12px;
+      color: var(--faint);
+      text-transform: lowercase;
+    }
+    @media (max-width:520px){
+      .card{ padding:26px 22px; }
+      .tagline{ font-size:16px; }
+      .logoBox{ padding: 16px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="card">
+      <!-- Put your chosen white logo image at: docs/assets/lockup.jpg -->
+      <div class="logoBox">
+        <img class="lockup" src="./assets/lockup.jpg" alt="anguila ventures">
+      </div>
+
+      <p class="tagline">Backing founders who swim against the current.</p>
+
+      <div class="meta">
+        <span class="pill">early-stage</span>
+        <span class="pill">startups</span>
+        <span class="pill">founder-friendly</span>
+        <span class="pill">B2B</span>
+        <span class="pill">spain</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <footer>
+        <span>© <span id="y"></span> anguila ventures</span>
+        <span>anguila.ventures</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
